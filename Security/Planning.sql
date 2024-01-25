@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Planning]
+    AUTHORIZATION [NMGR\ru12571];
+

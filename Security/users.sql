@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [users]
+    AUTHORIZATION [NMGR\ru12571];
+

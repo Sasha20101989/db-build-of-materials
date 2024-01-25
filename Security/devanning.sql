@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [devanning]
+    AUTHORIZATION [NMGR\ru12571];
+

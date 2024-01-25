@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>db-Build-Of-Materials</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{a0fa42d6-ce31-4c33-9960-2a3ad531a360}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>db_BOM</RootNamespace>
+    <AssemblyName>db-Build-Of-Materials</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\tbd_HistoryOfChanges.sql" />
+    <Build Include="dbo\Tables\tbd_BomProduction.sql" />
+    <Build Include="dbo\Tables\tbd_EndItems.sql" />
+    <Build Include="dbo\Tables\tbd_ExternalColors.sql" />
+    <Build Include="dbo\Tables\tbd_InternalColors.sql" />
+    <Build Include="dbo\Tables\tbd_Models.sql" />
+    <Build Include="dbo\Tables\tbd_ModelVariants.sql" />
+    <Build Include="dbo\Tables\tbd_MtcCriteria.sql" />
+    <Build Include="dbo\Tables\tbd_MtcForEndItems.sql" />
+    <Build Include="dbo\Tables\tbd_MtcForPartsApplication.sql" />
+    <Build Include="dbo\Tables\tbd_MtcGroups.sql" />
+    <Build Include="dbo\Tables\tbd_Parts.sql" />
+    <Build Include="dbo\Tables\tbd_PartsType.sql" />
+    <Build Include="dbo\Tables\tbd_Suppliers.sql" />
+    <Build Include="dbo\Tables\tbd_PartsApplication.sql" />
+    <Build Include="dbo\Tables\tbd_Log.sql" />
+    <Build Include="Security\NISSANEU_NE NMGR SQLSSRS Developer _ALL.sql" />
+    <Build Include="Security\NMGR_ru12571.sql" />
+    <Build Include="Security\NMGR_RU-NMGR-SVC039.sql" />
+    <Build Include="Security\NMGR_ru13779.sql" />
+    <Build Include="Security\NMGR_ru12787.sql" />
+    <Build Include="Security\NMGR_ru12205.sql" />
+    <Build Include="Security\NMGR_ru12121.sql" />
+    <Build Include="Security\NMGR_RU NMGR Live IS NMGR Team.sql" />
+    <Build Include="Security\NMGR_RU All Server Administrators.sql" />
+    <Build Include="Security\NMGR_RU NMGR EUC SQL DBuser_DVS.sql" />
+    <Build Include="Security\NMGR_RU NMGR EUC SQL DBuser_BOM.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="Security\bom.sql" />
+    <Build Include="Security\devanning.sql" />
+    <Build Include="Security\Planning.sql" />
+    <Build Include="Security\ssis.sql" />
+    <Build Include="Security\test.sql" />
+    <Build Include="Security\tracing.sql" />
+    <Build Include="Security\users.sql" />
+  </ItemGroup>
+</Project>
